@@ -128,7 +128,7 @@ if (cluster.isMaster) {
       .then(() => {
         console.log(colors.green("attack performed ", colors.blue(msg.left)));
       })
-      .catch(() => {
+      .catch(err => {
         console.log(colors.red("ERROR ", colors.blue(msg.left)));
       })
       .finally(() => {
