@@ -108,7 +108,7 @@ if (cluster.isMaster) {
   });
 
   for (let i = 0, amount = options.amount; i < amount; i++) {
-    clusters[Math.floor(amount & 7)].send({ ...options, left: amount - i });
+    clusters[Math.floor(amount % 7)].send({ ...options, left: amount - i });
   }
 } else {
   process.on("message", msg => {
